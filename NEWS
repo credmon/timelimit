@@ -1,5 +1,8 @@
 Change log for timelimit, the process time limit tool
 
+1.8.1		not yet ;)
+	- remove the $Ringlet tags from the source files [roam]
+
 1.8		2011/04/13
 	- getopt() returns -1 on error, not EOF [roam]
 	- add a simple test suite compatible with Perl's TAP framework [roam]
@@ -81,5 +84,3 @@ Name tags:
 	mats	Mats Erik Andersson <mats.andersson@gisladisker.se>
 
 Comments:	Peter Pentchev <roam@ringlet.net>
-
-$Ringlet$
