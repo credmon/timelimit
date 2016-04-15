@@ -2,6 +2,7 @@ Change log for timelimit, the process time limit tool
 
 1.8.1		not yet ;)
 	- remove the $Ringlet tags from the source files [roam]
+	- install the tests as documentation examples [roam]
 
 1.8		2011/04/13
 	- getopt() returns -1 on error, not EOF [roam]

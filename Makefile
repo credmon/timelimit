@@ -43,14 +43,16 @@ LOCALBASE?=	/usr/local
 PREFIX?=	${LOCALBASE}
 BINDIR?=	${PREFIX}/bin
 MANDIR?=	${PREFIX}/man/man
+DOCSDIR?=	${PREFIX}/share/doc/timelimit
+EXAMPLESDIR?=	${DOCSDIR}/examples
 
 BINOWN?=	root
 BINGRP?=	wheel
 BINMODE?=	555
 
-MANOWN?=	root
-MANGRP?=	wheel
-MANMODE?=	644
+SHAREOWN?=	root
+SHAREGRP?=	wheel
+SHAREMODE?=	644
 
 # comment this if you do not have err(3) and errx(3) (most BSD systems do)
 CFLAGS+=	-DHAVE_ERR
@@ -85,8 +87,10 @@ ${MAN1GZ}:	${MAN1}
 install:	all
 		-${MKDIR} ${DESTDIR}${BINDIR}
 		-${MKDIR} ${DESTDIR}${MANDIR}1
+		-${MKDIR} ${DESTDIR}${EXAMPLESDIR}/tests
 		install -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ${PROG} ${DESTDIR}${BINDIR}/
-		install -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE} ${MAN1GZ} ${DESTDIR}${MANDIR}1/
+		install -c -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} ${MAN1GZ} ${DESTDIR}${MANDIR}1/
+		install -c -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} t/*.t ${DESTDIR}${EXAMPLESDIR}/tests/
 
 check:		all
 		prove -v t
