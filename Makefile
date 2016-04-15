@@ -23,7 +23,9 @@
 # SUCH DAMAGE.
 
 CC?=		gcc
+CFLAGS_STD?=	-std=c99
 CFLAGS?=		-O -pipe
+CFLAGS+=	${CFLAGS_STD}
 CPPFLAGS?=
 LDFLAGS?=
 LFLAGS?=	${LDFLAGS}
