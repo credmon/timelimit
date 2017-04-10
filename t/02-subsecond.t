@@ -38,7 +38,7 @@ if [ "$res" = 69 ]; then
 	done
 	exit 0
 fi
-if [ "$res" = 0 ]; then echo 'ok 1'; else echo "not ok 1 res is $res"; fi
+if [ "$res" = 0 -o "$res" = 143 ]; then echo 'ok 1'; else echo "not ok 1 res is $res"; fi
 
 echo '# kill a shell script during the sleep, only execute a single echo'
 v=`$TIMELIMIT -t 0.7 sh -c 'echo 1; sleep 1; echo 2' 2>/dev/null`
